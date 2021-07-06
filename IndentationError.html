@@ -1,0 +1,59 @@
+
+<h1 id="indentationerror">IndentationError</h1>
+<h3 id="what-is-indentationerror-">What is IndentationError?</h3>
+<p>A Error that raises for space mistakes. A Subclass of SyntaxError. </p>
+<blockquote>
+<p><a href="https://docs.python.org/3/library/exceptions.html/#IndentationError">Base class for syntax errors related to incorrect indentation. This is a subclass of SyntaxError.</a></p>
+</blockquote>
+<h3 id="some-examples-of-error-makeover-the-error-">Some Examples of error makeover the error:</h3>
+<h4 id="ex1-expected-an-indent-block">Ex1: expected an indent block</h4>
+<pre><code class="lang-py"><span class="hljs-keyword">if</span> <span class="hljs-string">'Hello'</span>:
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">'give this indent'</span>)</span></span>
+</code></pre>
+<p><strong>Correct form:</strong></p>
+<pre><code class="lang-py"><span class="hljs-built_in">if</span> <span class="hljs-string">'Hello'</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'given indent'</span>)
+</code></pre>
+<h4 id="ex2-unexpected-indent">Ex2: unexpected indent</h4>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span>:</span>
+    h = input(<span class="hljs-string">'&gt; '</span>)
+   print(h)
+</code></pre>
+<p><strong>Correct Form:</strong></p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">hello</span><span class="hljs-params">()</span>:</span>
+    h = input(<span class="hljs-string">'&gt; '</span>)
+    print(h)
+</code></pre>
+<p><em><strong>Similar As:</strong></em></p>
+<pre><code class="lang-py">  <span class="hljs-built_in">print</span>(<span class="hljs-string">'test'</span>)
+</code></pre>
+<p><em>Correct Form:</em></p>
+<pre><code class="lang-py"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">'test'</span>)</span></span>
+</code></pre>
+<h3 id="some-more-info-on-raising-indentation-error-">Some More Info On Raising Indentation Error:</h3>
+<h4 id="simple-raise-syntax">Simple raise syntax</h4>
+<pre><code class="lang-py"><span class="hljs-keyword">raise</span> <span class="hljs-type">IndentationError</span>(<span class="hljs-symbol">'Give</span> me indent block')
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code>Traceback (most recent <span class="hljs-keyword">call</span> <span class="hljs-keyword">last</span>):
+  <span class="hljs-keyword">File</span> <span class="hljs-string">"/home/errors/test.py"</span>, line <span class="hljs-number">1</span>, <span class="hljs-keyword">in</span> &lt;<span class="hljs-keyword">module</span>&gt;
+    <span class="hljs-keyword">raise</span> IndentationError(<span class="hljs-string">'hello'</span>)
+IndentationError: Give me indent <span class="hljs-keyword">block</span>
+</code></pre><h4 id="custom-error-with-detailed-info">Custom error with detailed info</h4>
+<pre><code class="lang-py"><span class="hljs-keyword">error </span>= IndentationError('hello!')
+
+error.msg = error.msg+' I am indent'
+
+error.lineno = 100
+
+error.filename='errorfile.py'
+
+raise error
+</code></pre>
+<p><strong>Result:</strong></p>
+<pre><code>Traceback (most recent <span class="hljs-keyword">call</span> <span class="hljs-keyword">last</span>):
+  File <span class="hljs-string">"&lt;filename&gt;"</span>, <span class="hljs-built_in">line</span> <span class="hljs-number">1</span>, in <span class="hljs-symbol">&lt;module&gt;</span>
+  File <span class="hljs-string">"errorfile.py"</span>, <span class="hljs-built_in">line</span> <span class="hljs-number">100</span>
+IndentationError: hello! I <span class="hljs-keyword">am</span> <span class="hljs-built_in">indent</span>
+</code></pre><hr>
+<h2 id="-id-of-indentationerror-2879828888"><em> <em>*ID of IndentationError:</em></em> 2879828888</h2>
